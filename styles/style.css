@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 1366px;
+  height: 766px;
+  background-image: radial-gradient(#1f3756, #141539);
+  padding-top: 45px;
+}
+
+.header {
+  width: 700px;
+  height: 150px;
+  border: 2px solid #606e85;
+  border-radius: 18px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 31px;
+}
+
+.header .logo {
+  padding-top: 5px;
+}
+
+.header .score {
+  width: 150px;
+  height: 115px;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 17px 0;
+}
+
+.header .score .text-score {
+  color: #2a46c0;
+  letter-spacing: 2px;
+}
+
+.header .score .value-score {
+  color: #3b4363;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 53px;
+}
+
+.content {
+  margin: 0 auto 60px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.content .screen-game {
+  display: flex;
+  margin-top: 160px;
+  position: relative;
+}
+
+.content .screen-pick {
+  display: none;
+  align-items: center;
+  margin-top: 70px;
+  width: 700px;
+  height: 370px;
+  transition: all 0.5s;
+}
+
+.content .screen-pick.result-game {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  width: 1050px;
+  height: 370px;
+}
+
+.content .pick {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.content .screen-game .pick {
+  position: absolute;
+  cursor: pointer;
+}
+
+.content .pick-scissor {
+  background-image: linear-gradient(to bottom, #ec9e0e, #eca922);
+}
+
+.content .pick-paper {
+  background-image: linear-gradient(to bottom, #4865f4, #5671f5);
+}
+
+.content .pick-rock {
+  background-image: linear-gradient(to bottom, #dc2e4e, #dd405d);
+}
+
+.content .pick-scissor.winner,
+.content .pick-paper.winner,
+.content .pick-rock.winner {
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 0 0 #afacac;
+  }
+  40% {
+    box-shadow: 0 0 0 60px rgba(255, 109, 74, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 60px rgba(255, 109, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 109, 74, 0);
+  }
+}
+
+.content .pick .pick-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.content .pick-paper .pick-image {
+  background: #fff url(../images/icon-paper.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 50%;
+}
+
+.content .pick-scissor .pick-image {
+  background: #fff url(../images/icon-scissors.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 50%;
+}
+
+.content .pick-rock .pick-image {
+  background: #fff url(../images/icon-rock.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 50%;
+}
+
+.content .screen-game .pick-paper:hover .pick-image {
+  background: #3c4262 url(../images/icon-paper-white.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 50%;
+}
+
+.content .screen-game .pick-scissor:hover .pick-image {
+  background: #3c4262 url(../images/icon-scissors-white.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 50%;
+}
+
+.content .screen-game .pick-rock:hover .pick-image {
+  background: #3c4262 url(../images/icon-rock-white.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 50%;
+}
+
+.content .screen-game .pick:nth-child(1) {
+  left: -31%;
+  top: -33%;
+}
+
+.content .screen-game .pick:nth-child(2) {
+  left: 63%;
+  top: -33%;
+}
+
+.content .screen-game .pick:nth-child(3) {
+  left: 17%;
+  top: 47%;
+}
+
+.content .screen-pick .your-pick,
+.content .screen-pick .house-pick {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content .screen-pick .result-pick {
+  display: none;
+}
+
+.content .screen-pick.result-game .your-pick,
+.content .screen-pick.result-game .house-pick {
+  width: 30%;
+}
+
+.content .screen-pick span {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
+.content .screen-pick .pick {
+  position: relative;
+  top: 45px;
+  left: 0;
+  width: 290px;
+  height: 290px;
+}
+
+.content .screen-pick .pick-image {
+  width: 220px;
+  height: 220px;
+}
+
+.content .screen-pick .neutral-pick {
+  width: 220px;
+  height: 220px;
+  background-color: #182341;
+}
+
+.content .screen-pick .neutral-pick .spin {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 5px solid #00000000;
+  border-top: 5px solid #fff;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content .screen-pick.result-game .result-pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.content .screen-pick.result-game .result-pick span {
+  margin-top: 100px;
+  font-size: 54px;
+  letter-spacing: initial;
+}
+
+.content .screen-pick.result-game .result-pick button {
+  width: 220px;
+  height: 48px;
+  margin-top: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #3b4363;
+  cursor: pointer;
+}
+
+.content .screen-pick.result-game .result-pick button:hover {
+  color: #dd163b;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 31px;
+}
+
+.footer button {
+  background-color: transparent;
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #919daf;
+  border-radius: 10px;
+  padding: 10px 35px;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  background-color: #fff;
+  color: #141539;
+}
+
+@media screen and (max-width: 1070px) {
+  main {
+    width: 100%;
+    height: 100%;
+  }
+
+  .header {
+    width: 307px;
+    height: 100px;
+    padding: 0 10px 0 21px;
+  }
+
+  .header .logo img {
+    width: 85px;
+    height: 50px;
+  }
+
+  .header .score {
+    width: 80px;
+    height: 72px;
+    padding: 13px 0;
+  }
+
+  .header .score .text-score {
+    letter-spacing: 1.5px;
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  .header .score .value-score {
+    color: #3b4363;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 31px;
+  }
+
+  .content .screen-game {
+    margin-bottom: 110px;
+  }
+
+  .content .screen-game .pick {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+
+  .content .screen-game img {
+    height: 170px;
+    width: 170px;
+  }
+
+  .content .screen-game .pick .pick-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .content .screen-game .pick:nth-child(1) {
+    left: -38%;
+    top: -38%;
+  }
+
+  .content .screen-game .pick:nth-child(2) {
+    left: 65%;
+    top: -38%;
+  }
+
+  .content .screen-game .pick:nth-child(3) {
+    left: 12%;
+    top: 50%;
+  }
+
+  .content .screen-pick:not(.result-pick) {
+    height: 130px;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .content .screen-pick.result-game .your-pick {
+    order: 0;
+    width: 50%;
+    height: 110px;
+    margin-bottom: 40px;
+  }
+
+  .content .screen-pick.result-game .house-pick {
+    order: 1;
+    width: 50%;
+    height: 110px;
+    margin-bottom: 40px;
+  }
+
+  .content .screen-pick.result-game .result-pick {
+    order: 2;
+    width: 100%;
+  }
+
+  .content .screen-pick .your-pick span,
+  .content .screen-pick .house-pick span {
+    font-size: 14px;
+    height: 34px;
+  }
+
+  .content .screen-pick .pick {
+    width: 130px;
+    height: 130px;
+  }
+
+  .content .screen-pick .pick-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .content .screen-pick .neutral-pick .spin {
+    width: 130px;
+    height: 130px;
+  }
+
+  @keyframes loading {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

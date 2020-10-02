@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+  <script src="https://kit.fontawesome.com/2e314a729a.js" crossorigin="anonymous"></script>
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+  <main>
+    <div class="header">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="">
+      </div>
+      <div class="score">
+        <span class="text-score">PONTOS</span>
+        <span class="value-score">0</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="screen-game">
+        <div class="pick pick-paper">
+          <div class="pick-image"></div>
+        </div>
+        <div class="pick pick-scissor">
+          <div class="pick-image"></div>
+        </div>
+        <div class="pick pick-rock">
+          <div class="pick-image"></div>
+        </div>
+        <img src="./images/bg-triangle.svg" alt="">
+      </div>
+      <div class="screen-pick">
+        <div class="your-pick">
+          <span>VOCÊ ESCOLHEU</span>
+          <div class="pick neutral-pick">
+            <div class="pick-image"></div>
+          </div>
+        </div>
+        <div class="result-pick">
+          <span>VOCÊ PERDEU</span>
+          <button>JOGAR NOVAMENTE</button>
+        </div>
+        <div class="house-pick">
+          <span>O COMPUTADOR ESCOLHEU</span>
+          <div class="pick neutral-pick">
+            <!--Voltar pra neutral-pick-->
+            <div class="pick-image"></div>
+            <div class="spin"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button>REGRAS</button>
+    </div>
+  </main>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="header-modal">
+        <span class="title">REGRAS</span>
+        <i class="fas fa-times close"></i>
+      </div>
+      <div class="body-modal">
+        <img src="./images/image-rules.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
